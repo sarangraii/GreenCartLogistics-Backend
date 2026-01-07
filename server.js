@@ -16,11 +16,11 @@ app.use(cors({
 }));
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/greencart', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/greencart', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/greencart');
 // Models
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
