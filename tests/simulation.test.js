@@ -8,10 +8,11 @@ describe('Simulation Logic Tests', () => {
 
   beforeAll(async () => {
     // Connect to test database
-    await mongoose.connect(process.env.TEST_MONGODB_URI || 'mongodb://localhost:27017/greencart_test', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(process.env.TEST_MONGODB_URI || 'mongodb://localhost:27017/greencart_test');
+      //  {
+    //   useNewUrlParser: true,
+    //   useUnifiedTopology: true,
+    // });
 
     // Create test user and get token
     const registerResponse = await request(app)
